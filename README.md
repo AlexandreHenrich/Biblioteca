@@ -1,58 +1,36 @@
-# Biblioteca
+📚 SGB - Sistema de Gerenciamento de Biblioteca
+O SGB é uma solução de software para terminal focada na automação dos processos fundamentais de uma biblioteca acadêmica. O projeto integra uma interface em camadas com um banco de dados relacional para gerenciar o ciclo de vida de empréstimos e a situação financeira dos usuários.
 
-📚 SGB-Console (Sistema de Gerenciamento de Biblioteca)
-O SGB-Console é uma aplicação desenvolvida em Python que simula o funcionamento do balcão de atendimento de uma biblioteca. O sistema integra lógica de programação, manipulação de banco de dados SQL e uma interface amigável via terminal para gerenciar empréstimos, devoluções e multas de alunos.
+🎯 Objetivo do Projeto
+Desenvolver uma ferramenta robusta que simule o fluxo real de uma biblioteca, garantindo a integridade dos dados através de relacionamentos SQL e oferecendo uma experiência de uso fluida para o aluno.
 
-🚀 Funcionalidades
-O sistema foi estruturado para oferecer um fluxo completo de atendimento:
+🛠️ Pilares Técnicos
+1. Gestão de Dados (SQL)
+O sistema utiliza um modelo relacional composto por três entidades principais que garantem a organização da informação:
 
-Autenticação de Usuário: Sistema de login seguro validando RA e senha no banco de dados.
+Alunos: Controle de credenciais e integridade do saldo devedor.
 
-Consulta de Acervo: Busca inteligente por Título, Autor ou Área, armazenando resultados em listas para exibição organizada.
+Acervo: Catálogo dinâmico com atualização de status em tempo real.
 
-Gestão de Empréstimos: Verificação de disponibilidade de títulos e geração automática de protocolos de atendimento.
+Movimentações: Registro histórico de empréstimos com vínculos de Chave Estrangeira (Foreign Keys) e deleção em cascata.
 
-Devolução com Cálculo de Multa: Sistema que detecta atrasos, calcula valores diários e aplica arredondamentos financeiros.
+2. Lógica de Negócio (Python)
+A inteligência do software foi construída utilizando conceitos avançados de programação:
 
-Módulo Financeiro: Consulta e quitação de débitos pendentes no cadastro do aluno.
+Modularização: Divisão de responsabilidades em funções específicas para login, consultas e transações financeiras.
 
-🛠️ Tecnologias e Conceitos Aplicados
-Este projeto demonstra o uso prático de:
+Segurança e Robustez: Implementação de tratamento de exceções (Try/Except) para prevenir interrupções por entradas de dados inválidas.
 
-Python 3: Linguagem base do sistema.
+Processamento Financeiro: Aplicação da biblioteca math para cálculos precisos de multas e arredondamentos conforme regras de negócio.
 
-SQLite3: Banco de dados relacional para persistência de dados.
+Automação de Protocolos: Uso da biblioteca random para geração de comprovantes únicos de atendimento.
 
-Tratamento de Exceções: Uso de blocos try/except para garantir que o sistema não encerre abruptamente em caso de entradas inválidas.
+3. Interface Humanizada
+Apesar de ser uma aplicação baseada em console, o sistema prioriza a clareza na comunicação, utilizando uma linguagem natural nas interações e menus intuitivos para facilitar a navegação do usuário.
 
-Modularização: Código organizado em funções para facilitar a manutenção e leitura.
+💻 Tecnologias Utilizadas
+Linguagem Principal: Python 3.10+
 
-Bibliotecas Nativas:
+Banco de Dados: SQLite / MySQL
 
-math: Utilizada para o arredondamento de taxas financeiras (ceil).
-
-random: Utilizada para a geração de protocolos numéricos aleatórios.
-
-SQL (DML/DDL): Criação de tabelas, relacionamentos com chaves estrangeiras (Foreign Keys), consultas complexas e atualizações de registros.
-
-📂 Estrutura do Banco de Dados
-O banco de dados é composto por três tabelas principais:
-
-aluno: Armazena dados cadastrais e saldo devedor.
-
-livros: Gerencia o catálogo e o status de disponibilidade (Disponível/Emprestado).
-
-emprestimo: Relaciona alunos e livros de forma dinâmica.
-
-⚙️ Como Executar
-Certifique-se de ter o Python 3.x instalado.
-
-Clone este repositório:
-
-Bash
-git clone https://github.com/seu-usuario/sgb-console.git
-Navegue até a pasta do projeto e execute o arquivo principal:
-
-Bash
-python biblioteca.py
-O banco de dados biblioteca.db será criado automaticamente na primeira execução (caso utilize o script de inicialização).
+Bibliotecas Adicionais: math (Cálculos), random (Protocolos), sqlite3 (Conectividade)
